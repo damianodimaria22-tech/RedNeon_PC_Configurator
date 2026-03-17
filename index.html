@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedNeon PC Configurator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div id="overlay" class="overlay"></div>
+    <div class="page-wrap">
+
+        <header class="mb-4">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center py-3">
+
+                    <div>
+                        <h1 class="logo-text">RedNeon PC Configurator</h1>
+                        <p class="subtitle">Configura il tuo PC pezzo per pezzo</p>
+                    </div>
+
+                    <div class="price-pill text-end">
+                        <div class="label">Totale</div>
+                        <div class="value" id="totalPrice">€ 0,00</div>
+                        <small class="text-muted d-block" id="baseInfo">Seleziona i componenti per iniziare</small>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="row g-4">
+
+                    <div class="col-lg-8">
+                        <div class="config-card">
+
+                            <h2 class="section-title mb-3">Componenti</h2>
+
+                            <div class="mb-3">
+                                <label class="form-label text-uppercase small text-muted">Processore (CPU)</label>
+                                <select class="form-select config-select" id="cpuSelect">
+                                    <option value="">Seleziona una CPU</option>
+                                </select>
+                                <small class="text-warning d-block mt-1" id="cpuCompat"></small>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label text-uppercase small text-muted">Scheda Madre</label>
+                                <select class="form-select config-select" id="moboSelect">
+                                    <option value="">Seleziona scheda madre</option>
+                                </select>
+                                <small class="text-warning d-block mt-1" id="moboCompat"></small>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label text-uppercase small text-muted">Scheda video (GPU)</label>
+                                <select class="form-select config-select" id="gpuSelect">
+                                    <option value="">Seleziona una GPU</option>
+                                </select>
+                                <small class="text-warning d-block mt-1" id="gpuCompat"></small>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label text-uppercase small text-muted">Memoria RAM</label>
+                                <select class="form-select config-select" id="ramSelect">
+                                    <option value="">Seleziona RAM</option>
+                                </select>
+                                <small class="text-warning d-block mt-1" id="ramCompat"></small>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label text-uppercase small text-muted">Raffreddamento CPU</label>
+                                <select class="form-select config-select" id="coolerSelect">
+                                    <option value="">Seleziona raffreddamento</option>
+                                </select>
+                                <small class="text-warning d-block mt-1" id="coolerCompat"></small>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label text-uppercase small text-muted">Archiviazione</label>
+                                <select class="form-select config-select" id="storageSelect">
+                                    <option value="">Seleziona storage</option>
+                                </select>
+                                <small class="text-warning d-block mt-1" id="storageCompat"></small>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label text-uppercase small text-muted">Case</label>
+                                <select class="form-select config-select" id="caseSelect">
+                                    <option value="">Seleziona case</option>
+                                </select>
+                                <small class="text-warning d-block mt-1" id="caseCompat"></small>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label text-uppercase small text-muted">Alimentatore (PSU)</label>
+                                <select class="form-select config-select" id="psuSelect">
+                                    <option value="">Seleziona PSU</option>
+                                </select>
+                                <small class="text-warning d-block mt-1" id="psuCompat"></small>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="summary-card sticky-top" style="top: 20px;">
+
+                            <h2 class="section-title mb-3">Riepilogo</h2>
+
+                            <div class="price-highlight mb-3">
+                                <div class="label">Totale</div>
+                                <div class="value" id="summaryTotal">€ 0,00</div>
+                            </div>
+
+                            <ul class="list-unstyled summary-list" id="summaryList">
+                                <li class="summary-item"><span>CPU</span><span class="value text-muted">–</span></li>
+                                <li class="summary-item"><span>Scheda Madre</span><span class="value text-muted">–</span></li>
+                                <li class="summary-item"><span>GPU</span><span class="value text-muted">–</span></li>
+                                <li class="summary-item"><span>RAM</span><span class="value text-muted">–</span></li>
+                                <li class="summary-item"><span>Raffreddamento</span><span class="value text-muted">–</span></li>
+                                <li class="summary-item"><span>Storage</span><span class="value text-muted">–</span></li>
+                                <li class="summary-item"><span>Case</span><span class="value text-muted">–</span></li>
+                                <li class="summary-item"><span>PSU</span><span class="value text-muted">–</span></li>
+                            </ul>
+
+                            <hr class="divider">
+
+                            <div class="text-muted small" id="compatInfo">
+                                Stato: <span class="badge bg-secondary">Incompleta</span>
+                            </div>
+
+                            <div class="text-muted small" id="noteText">
+                                Seleziona i componenti per iniziare.
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+</body>
+</html>
