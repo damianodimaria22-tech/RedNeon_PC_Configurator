@@ -1,5 +1,7 @@
-const compatibility = {
-    cpu_mobo: {
+const compatibility = 
+{
+    cpu_mobo: 
+    {
         'i3-14100f': ['z790-e', 'z790-master', 'z790-aorus', 'msi-z790-edge', 'asrock-z790', 'z890-ace', 'z890-tuf', 'z890-msi'],
         'i3-14100': ['z790-e', 'z790-master', 'z790-aorus', 'msi-z790-edge', 'asrock-z790', 'z890-ace', 'z890-tuf', 'z890-msi'],
         'i5-14400f': ['z790-e', 'z790-master', 'z790-aorus', 'msi-z790-edge', 'asrock-z790', 'z890-ace', 'z890-tuf', 'z890-msi'],
@@ -24,7 +26,8 @@ const compatibility = {
         'r9-8900': ['x870e-e', 'x870e-f', 'msi-x870e', 'gigabyte-x870e', 'asrock-x870e'],
         'r9-9950x': ['x870e-e', 'x870e-f', 'msi-x870e', 'gigabyte-x870e', 'asrock-x870e']
     },
-    gpu_psu: {
+    gpu_psu: 
+    {
         'rtx5070': 750, 'rtx5070ti': 800, 'rtx5080': 850, 'rtx5090': 1000,
         'rtx4060': 550, 'rtx4070': 700, 'rtx4070ti': 750, 'rtx4080': 850, 'rtx4090': 1000,
         'rtx3060': 650, 'rtx3070': 700, 'rtx3080': 800,
@@ -34,8 +37,10 @@ const compatibility = {
     }
 }
 
-const components = {
-    cpu: [
+const components = 
+{
+    cpu: 
+    [
         // Intel 14th Gen
         { id: 'i3-14100f', name: 'Intel Core i3-14100F', price: 130, socket: 'LGA1700' },
         { id: 'i3-14100', name: 'Intel Core i3-14100K', price: 180, socket: 'LGA1700' },
@@ -64,7 +69,8 @@ const components = {
         { id: 'r9-9950x', name: 'AMD Ryzen 9 9950X (Zen 5)', price: 700, socket: 'AM5' }
     ],
 
-    mobo: [
+    mobo: 
+    [
         // Intel LGA1700 (Z790, Z890)
         { id: 'z790-e', name: 'ASUS ROG STRIX Z790-E', price: 320, socket: 'LGA1700' },
         { id: 'z790-master', name: 'Gigabyte Z790 MASTER', price: 280, socket: 'LGA1700' },
@@ -88,7 +94,8 @@ const components = {
         { id: 'msi-x950e', name: 'MSI X950E EDGE WiFi', price: 480 }
     ],
 
-    gpu: [
+    gpu: 
+    [
         // NVIDIA RTX 50 Series (Latest 2026)
         { id: 'rtx5070', name: 'NVIDIA RTX 5070 12GB', price: 650 },
         { id: 'rtx5070ti', name: 'NVIDIA RTX 5070 Ti 16GB', price: 900 },
@@ -119,7 +126,8 @@ const components = {
         { id: 'arc-a750', name: 'Intel Arc A750 8GB', price: 290 }
     ],
 
-    ram: [
+    ram: 
+    [
         // DDR5 6000MHz
         { id: '16-ddr5-6000', name: '16GB DDR5 6000MHz', price: 85 },
         { id: '32-ddr5-6000', name: '32GB DDR5 6000MHz', price: 160 },
@@ -139,7 +147,8 @@ const components = {
         { id: '16-ddr5-5600', name: '16GB DDR5 5600MHz', price: 70 }
     ],
 
-    cooler: [
+    cooler: 
+    [
         // Air Coolers
         { id: 'noctua-nh-d15', name: 'Noctua NH-D15 Chromax', price: 110 },
         { id: 'noctua-nh-u14s', name: 'Noctua NH-U14S TR4-SP3', price: 85 },
@@ -161,7 +170,8 @@ const components = {
         { id: 'gigabyte-aorus-360', name: 'Gigabyte AORUS Liquid Cooler 360', price: 150 }
     ],
 
-    storage: [
+    storage: 
+    [
         // NVMe Gen 4
         { id: 'ssd-500gb-g4', name: 'SSD NVMe 500GB Gen4', price: 45 },
         { id: 'ssd-1tb-g4', name: 'SSD NVMe 1TB Gen4', price: 85 },
@@ -182,7 +192,8 @@ const components = {
         { id: 'hdd-8tb', name: 'HDD 8TB 7200RPM', price: 180 }
     ],
 
-    case: [
+    case: 
+    [
         // Mini ITX
         { id: 'case-mini-nr200', name: 'Cooler Master NR200P Mini', price: 85 },
         { id: 'case-mini-lian-li', name: 'Lian Li LANCOOL 205 Mini', price: 75 },
@@ -205,7 +216,8 @@ const components = {
         { id: 'case-full-phanteks-eclipse', name: 'Phanteks Evolv X', price: 240 }
     ],
 
-    psu: [
+    psu: 
+    [
         // 650W
         { id: 'psu-650-corsair-rm', name: 'Corsair RM750W 80+ Gold', price: 120 },
         { id: 'psu-650-evga', name: 'EVGA SuperNOVA 650W Gold', price: 85 },
@@ -232,7 +244,8 @@ const components = {
 }
 
 
-const selects = {
+const selects = 
+{
     cpu: document.getElementById('cpuSelect'),
     mobo: document.getElementById('moboSelect'),
     gpu: document.getElementById('gpuSelect'),
@@ -251,7 +264,8 @@ const compatInfoEl = document.getElementById('compatInfo')
 const noteTextEl = document.getElementById('noteText')
 const btnSummary = document.getElementById('btnSummary')
 
-const state = {
+const state = 
+{
     cpu: null,
     mobo: null,
     gpu: null,
@@ -262,12 +276,83 @@ const state = {
     psu: null
 }
 
-function formatPrice(v) {
+function formatPrice(v) 
+{
     return v.toLocaleString('it-IT', { style: 'currency', currency: 'EUR' })
 }
 
-function populateSelect(selectEl, items) {
-    items.forEach(item => {
+function getSimpleHint(type, comp) 
+{
+    const defaults = 
+    {
+        cpu: 'Scegli la CPU in base a budget e uso.',
+        mobo: 'Scegli una scheda madre compatibile con la CPU.',
+        gpu: 'Scegli una GPU in base a risoluzione e giochi.',
+        ram: 'Più RAM significa più spazio per programmi e gioco.',
+        cooler: 'Un buon raffreddamento mantiene la CPU silenziosa e stabile.',
+        storage: 'Scegli tra SSD veloci e capienza per file e giochi.',
+        case: 'Scegli un case con spazio e flusso d’aria adatto.',
+        psu: 'Scegli un alimentatore con wattaggio sufficiente per il tuo sistema.'
+    }
+
+    if (!comp) return defaults[type] || ''
+
+    switch (type) 
+    {
+        case 'cpu': 
+        {
+            if (/^i3|^r5/.test(comp.id)) return 'Ottimo per office e gaming 1080p.'
+            if (/^i5|^r7/.test(comp.id)) return 'Perfetta per gaming FHD e produttività.'
+            if (/^i7|^i9|^r9/.test(comp.id)) return 'Ideale per editing video e lavori pesanti.'
+            return defaults.cpu
+        }
+        case 'gpu': 
+        {
+            if (/^(rtx3|rx7|arc)/.test(comp.id)) return 'Ottima per gaming 1080p/1440p.'
+            if (/^(rtx4|rx7.8|rx8)/.test(comp.id)) return 'Perfetta per gaming 1440p/4K.'
+            if (/^(rtx5|rx8|rx9)/.test(comp.id)) return 'Top per 4K, streaming e rendering.'
+            return defaults.gpu
+        }
+        case 'ram': 
+        {
+            if (/^16-/.test(comp.id)) return 'Buona per uso quotidiano e gaming leggero.'
+            if (/^32-/.test(comp.id)) return 'Ottima per multitasking e giochi moderni.'
+            return 'Molto RAM per editing e programmi pesanti.'
+        }
+        case 'storage': 
+        {
+            if (comp.id.includes('gen5')) return 'SSD super veloce per caricare tutto in un attimo.'
+            if (comp.id.includes('gen4')) return 'Velocità ideale per giochi e programmi.'
+            if (comp.id.includes('sata')) return 'Buono per archiviazione e backup economico.'
+            if (comp.id.includes('hdd')) return 'Capiente e ideale per archiviazione di massa.'
+            return defaults.storage
+        }
+        case 'psu': 
+        {
+            const watt = parseInt(comp.name.match(/\d+/)?.[0] || '0', 10)
+            if (watt >= 1000) return 'Ottimo per sistemi high-end e overclock.'
+            if (watt >= 800) return 'Perfetto per gaming e schede video potenti.'
+            return 'Adatto per build mainstream e office.'
+        }
+        default:
+            return defaults[type] || ''
+    }
+}
+
+function updateDescriptions()
+{
+    Object.keys(state).forEach(type => 
+    {
+        const el = document.getElementById(`${type}Desc`)
+        if (!el) return
+        el.textContent = getSimpleHint(type, state[type])
+    })
+}
+
+function populateSelect(selectEl, items) 
+{
+    items.forEach(item => 
+    {
         const opt = document.createElement('option')
         opt.value = item.id
         opt.textContent = item.name + ' (' + formatPrice(item.price) + ')'
@@ -275,7 +360,8 @@ function populateSelect(selectEl, items) {
     })
 }
 
-function initSelects() {
+function initSelects() 
+{
     populateSelect(selects.cpu, components.cpu)
     populateSelect(selects.mobo, components.mobo)
     populateSelect(selects.gpu, components.gpu)
@@ -286,11 +372,13 @@ function initSelects() {
     populateSelect(selects.psu, components.psu)
 }
 
-function findComponent(type, id) {
+function findComponent(type, id) 
+{
     return components[type].find(c => c.id === id) || null
 }
 
-function updateState() {
+function updateState() 
+{
     state.cpu = findComponent('cpu', selects.cpu.value)
     state.mobo = findComponent('mobo', selects.mobo.value)
     state.gpu = findComponent('gpu', selects.gpu.value)
@@ -301,63 +389,118 @@ function updateState() {
     state.psu = findComponent('psu', selects.psu.value)
 }
 
-function calcTotal() {
+function calcTotal() 
+{
     let total = 0
-    Object.values(state).forEach(comp => {
+    Object.values(state).forEach(comp => 
+    {
         if (comp) total += comp.price
     })
     return total
 }
 
-function isComplete() {
+function isComplete() 
+{
     return Object.values(state).every(comp => comp !== null)
 }
 
-function updatePriceUI() {
+function updatePriceUI() 
+{
     const total = calcTotal()
     totalPriceEl.textContent = formatPrice(total)
     summaryTotalEl.textContent = formatPrice(total)
 
-    if (total === 0) {
+    if (total === 0) 
+    {
         baseInfoEl.textContent = 'Seleziona i componenti per iniziare'
-    } else {
+    } 
+    else 
+    {
         baseInfoEl.textContent = 'Prezzo stimato configurazione'
     }
 
-    if (isComplete()) {
+    if (isComplete()) 
+    {
         compatInfoEl.innerHTML = 'Stato configurazione: <span class="badge bg-success">Completa</span>'
         noteTextEl.textContent = 'Configurazione completa!'
-    } else {
+    } 
+    else
+    {
         compatInfoEl.innerHTML = 'Stato configurazione: <span class="badge bg-secondary">Incompleta</span>'
         noteTextEl.textContent = 'Seleziona tutti i componenti.'
     }
 }
 
-function updateSummaryUI() {
+function updateSummaryUI() 
+{
     const values = [state.cpu, state.mobo, state.gpu, state.ram, state.cooler, state.storage, state.case, state.psu]
     const items = summaryListEl.querySelectorAll('.summary-item .value')
-    items.forEach((el, idx) => {
+    items.forEach((el, idx) => 
+    {
         const comp = values[idx]
         el.textContent = comp ? comp.name : '–'
         el.classList.toggle('text-muted', !comp)
     })
 }
 
-function handleChange() {
+function handleChange(activeStep) 
+{
     updateState()
     updatePriceUI()
     updateSummaryUI()
+    updateDescriptions()
     checkCompatibility()
+
+    if (activeStep) 
+    {
+        setActiveStep(activeStep)
+    }
 }
 
-function checkCompatibility() {
+function normalizeStep(step) 
+{
+    const mapping = 
+    {
+        mobo: 'cpu',
+        cooler: 'gpu',
+        case: 'storage',
+        psu: 'storage'
+    }
+    return mapping[step] || step
+}
+
+function setActiveStep(step) 
+{
+    const normalized = normalizeStep(step)
+    document.querySelectorAll('.step').forEach(btn => 
+    {
+        btn.classList.toggle('active', btn.dataset.step === normalized)
+    })
+}
+
+function scrollToStep(step) 
+{
+    const normalized = normalizeStep(step)
+    const target = document.getElementById(normalized === 'summary' ? 'step-summary' : `step-${normalized}`)
+    if (target) 
+    {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+}
+
+function checkCompatibility() 
+{
     // CPU-Mobo compatibility
     let cpuCompatMsg = ''
-    if (state.cpu && state.mobo) {
+    if (state.cpu && state.mobo) 
+        {
         const compatMobos = compatibility.cpu_mobo[state.cpu.id] || []
-        if (!compatMobos.includes(state.mobo.id)) {
+        if (!compatMobos.includes(state.mobo.id)) 
+        {
             cpuCompatMsg = '⚠️ CPU e Mobo potrebbero non essere compatibili!'
-        } else {
+        } 
+        else
+        {
             cpuCompatMsg = '✓ Compatibile'
         }
     }
@@ -365,12 +508,16 @@ function checkCompatibility() {
 
     // GPU-PSU compatibility
     let gpuCompatMsg = ''
-    if (state.gpu && state.psu) {
+    if (state.gpu && state.psu) 
+        {
         const requiredWattage = compatibility.gpu_psu[state.gpu.id] || 600
         const psuWattage = parseInt(state.psu.name.match(/\d+/)[0]) || 0
-        if (psuWattage < requiredWattage) {
+        if (psuWattage < requiredWattage) 
+        {
             gpuCompatMsg = `⚠️ PSU insufficiente! Richiesto: ${requiredWattage}W`
-        } else {
+        } 
+        else 
+        {
             gpuCompatMsg = '✓ Compatibile'
         }
     }
@@ -378,9 +525,12 @@ function checkCompatibility() {
 
     // Mobo-CPU socket check
     let moboCompatMsg = ''
-    if (state.mobo && state.cpu && state.mobo.socket === state.cpu.socket) {
+    if (state.mobo && state.cpu && state.mobo.socket === state.cpu.socket) 
+    {
         moboCompatMsg = '✓ Socket compatibile'
-    } else if (state.mobo && state.cpu) {
+    } 
+    else if (state.mobo && state.cpu) 
+    {
         moboCompatMsg = `⚠️ Socket: ${state.cpu.socket} vs ${state.mobo.socket}`
     }
     document.getElementById('moboCompat').textContent = moboCompatMsg
@@ -393,17 +543,34 @@ function checkCompatibility() {
     document.getElementById('psuCompat').textContent = gpuCompatMsg ? '' : (state.psu ? '✓ PSU OK' : '')
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => 
+{
     initSelects()
     updatePriceUI()
     updateSummaryUI()
 
-    Object.values(selects).forEach(selectEl => {
-        selectEl.addEventListener('change', handleChange)
+    Object.entries(selects).forEach(([type, selectEl]) => 
+    {
+        selectEl.addEventListener('change', () => handleChange(type))
+        selectEl.addEventListener('focus', () => setActiveStep(type))
     })
 
-    btnSummary.addEventListener('click', () => {
-        handleChange()
-        summaryListEl.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    document.querySelectorAll('.step').forEach(btn => 
+    {
+        btn.addEventListener('click', () => 
+        {
+            const step = btn.dataset.step
+            setActiveStep(step)
+            scrollToStep(step)
+        })
     })
+
+    btnSummary.addEventListener('click', () => 
+    {
+        handleChange('summary')
+        scrollToStep('summary')
+    })
+
+    updateDescriptions()
+    setActiveStep('cpu')
 })
