@@ -24,15 +24,19 @@
                         <p class="subtitle">Configura il tuo PC pezzo per pezzo</p>
                     </div>
 
-                    <div class="price-pill text-end">
-                        <div class="label">Totale</div>
-                        <div class="value" id="totalPrice">€ 0,00</div>
-                        <small class="text-muted d-block" id="baseInfo">Seleziona i componenti per iniziare</small>
-                    </div>
-
                 </div>
             </div>
         </header>
+
+        <nav class="stepper" aria-label="Passi configurazione">
+            <div class="container d-flex flex-nowrap overflow-auto">
+                <button type="button" class="step btn btn-link text-decoration-none px-3 py-2" data-step="cpu">CPU</button>
+                <button type="button" class="step btn btn-link text-decoration-none px-3 py-2" data-step="gpu">GPU</button>
+                <button type="button" class="step btn btn-link text-decoration-none px-3 py-2" data-step="ram">RAM</button>
+                <button type="button" class="step btn btn-link text-decoration-none px-3 py-2" data-step="storage">Storage</button>
+                <button type="button" class="step btn btn-link text-decoration-none px-3 py-2" data-step="summary">Riepilogo</button>
+            </div>
+        </nav>
 
         <main>
             <div class="container">
@@ -43,75 +47,83 @@
 
                             <h2 class="section-title mb-3">Componenti</h2>
 
-                            <div class="mb-3">
+                            <div class="mb-3" id="step-cpu">
                                 <label class="form-label text-uppercase small text-muted">Processore (CPU)</label>
                                 <select class="form-select config-select" id="cpuSelect">
                                     <option value="">Seleziona una CPU</option>
                                 </select>
                                 <small class="text-warning d-block mt-1" id="cpuCompat"></small>
+                                <small class="form-text text-muted mt-1" id="cpuDesc">Ottimo per gaming e lavoro, scegli in base al tuo budget.</small>
                             </div>
 
-                            <div class="mb-3">
+                            <div class="mb-3" id="step-mobo">
                                 <label class="form-label text-uppercase small text-muted">Scheda Madre</label>
                                 <select class="form-select config-select" id="moboSelect">
                                     <option value="">Seleziona scheda madre</option>
                                 </select>
                                 <small class="text-warning d-block mt-1" id="moboCompat"></small>
+                                <small class="form-text text-muted mt-1" id="moboDesc">Scegli una scheda madre compatibile con la CPU scelta.</small>
                             </div>
 
-                            <div class="mb-3">
+                            <div class="mb-3" id="step-gpu">
                                 <label class="form-label text-uppercase small text-muted">Scheda video (GPU)</label>
                                 <select class="form-select config-select" id="gpuSelect">
                                     <option value="">Seleziona una GPU</option>
                                 </select>
                                 <small class="text-warning d-block mt-1" id="gpuCompat"></small>
+                                <small class="form-text text-muted mt-1" id="gpuDesc">Scegli una GPU in base alla risoluzione e al tipo di giochi.</small>
                             </div>
 
-                            <div class="mb-3">
+                            <div class="mb-3" id="step-ram">
                                 <label class="form-label text-uppercase small text-muted">Memoria RAM</label>
                                 <select class="form-select config-select" id="ramSelect">
                                     <option value="">Seleziona RAM</option>
                                 </select>
                                 <small class="text-warning d-block mt-1" id="ramCompat"></small>
+                                <small class="form-text text-muted mt-1" id="ramDesc">Più RAM significa più spazio per programmi e gioco senza rallentamenti.</small>
                             </div>
 
-                            <div class="mb-3">
+                            <div class="mb-3" id="step-cooler">
                                 <label class="form-label text-uppercase small text-muted">Raffreddamento CPU</label>
                                 <select class="form-select config-select" id="coolerSelect">
                                     <option value="">Seleziona raffreddamento</option>
                                 </select>
                                 <small class="text-warning d-block mt-1" id="coolerCompat"></small>
+                                <small class="form-text text-muted mt-1" id="coolerDesc">Un buon raffreddamento mantiene la CPU silenziosa e stabile sotto carico.</small>
                             </div>
 
-                            <div class="mb-3">
+                            <div class="mb-3" id="step-storage">
                                 <label class="form-label text-uppercase small text-muted">Archiviazione</label>
                                 <select class="form-select config-select" id="storageSelect">
                                     <option value="">Seleziona storage</option>
                                 </select>
                                 <small class="text-warning d-block mt-1" id="storageCompat"></small>
+                                <small class="form-text text-muted mt-1" id="storageDesc">Scegli tra SSD veloci e capienza per file e giochi.</small>
                             </div>
 
-                            <div class="mb-3">
+                            <div class="mb-3" id="step-case">
                                 <label class="form-label text-uppercase small text-muted">Case</label>
                                 <select class="form-select config-select" id="caseSelect">
                                     <option value="">Seleziona case</option>
                                 </select>
                                 <small class="text-warning d-block mt-1" id="caseCompat"></small>
+                                <small class="form-text text-muted mt-1" id="caseDesc">Scegli un case con spazio e flusso d'aria adatti ai componenti.</small>
                             </div>
 
-                            <div class="mb-3">
+                            <div class="mb-3" id="step-psu">
                                 <label class="form-label text-uppercase small text-muted">Alimentatore (PSU)</label>
                                 <select class="form-select config-select" id="psuSelect">
                                     <option value="">Seleziona PSU</option>
                                 </select>
                                 <small class="text-warning d-block mt-1" id="psuCompat"></small>
+                                <small class="form-text text-muted mt-1" id="psuDesc">Scegli un alimentatore con wattaggio sufficiente per la tua configurazione.</small>
                             </div>
 
                         </div>
                     </div>
 
                     <div class="col-lg-4">
-                        <div class="summary-card sticky-top" style="top: 20px;">
+                        <div class="summary-card sticky-top" id="step-summary" style="top: 20px;">
 
                             <h2 class="section-title mb-3">Riepilogo</h2>
 
@@ -147,6 +159,17 @@
                 </div>
             </div>
         </main>
+
+        <div class="fixed-total-bar">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div>
+                    <div class="label">Totale</div>
+                    <div class="value" id="totalPrice">€ 0,00</div>
+                    <div class="small text-muted" id="baseInfo">Seleziona i componenti per iniziare</div>
+                </div>
+                <button class="btn btn-neon" id="btnSummary">Vai a riepilogo</button>
+            </div>
+        </div>
 
     </div>
 
